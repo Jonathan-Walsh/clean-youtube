@@ -1,13 +1,19 @@
 {
     "name": "Clean YouTube",
-    "version": "1.0",
+    "version": "0.1",
     "description": "A Chrome extension that removes non-essential elements from YouTube webpages",
     "manifest_version": 2,
     "content_scripts": [
         {
-            "matches": ["*://*.youtube.com/watch*"],
+            "matches": ["*://*.youtube.com/*"],
             "js": ["script.js"],
             "run_at": "document_end"
         }
+    ],
+    "background": {
+        "scripts": ["background.js"]
+    },
+    "permissions": [
+        "*://*.youtube.com/*", "tabs", "webNavigation"
     ]
 }
